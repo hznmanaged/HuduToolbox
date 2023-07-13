@@ -1,0 +1,818 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Horizon.Common</name>
+    </assembly>
+    <members>
+        <member name="T:Horizon.DontCopyAttribute">
+            <summary>
+            Used to prevent copying a particular property with <see cref="T:Horizon.ObjectTools">ObjectTools</see>' object copy functions
+            </summary>
+        </member>
+        <member name="M:Horizon.BooleanTools.Random(System.Random)">
+            <summary>
+            Returns a random true/false
+            </summary>
+            <param name="randomSource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.ClassTools.GetDerivationsOfType(System.Type,System.String,System.String)">
+            <summary>
+            Returns all Types found that are assignable from the specified Type that is also not an interface or abstract class.
+            Optionally filters by assembly and/or namespace;
+            </summary>
+            <param name="type"></param>
+            <param name="namespaceFilter"></param>
+            <param name="assemblyName">Example: "Horizon.Common.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Horizon.DataTools.IsDBNullOrNull(System.Object)">
+            <summary>
+            Returns a Boolean value indicating whether an expression evaluates to the System.DBNull class or null.
+            </summary>
+            <param name="value">The value to be tested.</param>
+            <returns>TRUE if the provided value is a DBNull or null.</returns>
+        </member>
+        <member name="M:Horizon.DataTools.IsDBNullOrEmpty(System.Object)">
+            <summary>
+            Returns a Boolean value indicating whether an expression evaluates to the System.DBNull class, Nothing, or an empty string.
+            </summary>
+            <param name="value">The value to be tested.</param>
+            <returns>TRUE if the provided value is a DBNull, Nothing, or evaluates to an empty string. If it evaluates to a string containing whitespace this will return false.</returns>
+        </member>
+        <member name="M:Horizon.DataTools.IsDBNullOrZero(System.Object)">
+            <summary>
+            Returns a Boolean value indicating whether an expression evaluates to the System.DBNull class, null, a non-number, or zero.
+            Throws 
+            </summary>
+            <param name="value">The value to be tested.</param>
+            <returns>TRUE if the provided value is a DBNull, null, does not evaluate to a number, or evaluates to the number 0. Otherwise returns false.</returns>
+        </member>
+        <member name="M:Horizon.DataTools.IsDBNullOrWhitespace(System.Object)">
+            <summary>
+            Returns a Boolean value indicating whether an expression evaluates to the System.DBNull class, Nothing, or an empty string.
+            </summary>
+            <param name="value">The value to be tested.</param>
+            <returns>TRUE if the provided value is a DBNull, Nothing, or evaluates to an empty string. If it evaluates to a string containing whitespace this will return false.</returns>
+        </member>
+        <member name="M:Horizon.DataTools.GetString(System.Object,System.String)">
+            <summary>
+            Checks if the value is DBNull/null and returns a safe string
+            </summary>
+            <param name="value">The value to be returned as a string</param>
+            <param name="nullValue">The value to be returned if value is DBNull/null</param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.DataTools.GetCharacter(System.Object,System.Nullable{System.Char})">
+            <summary>
+            Checks if the value is DBNull/null and returns the character value or a default value
+            </summary>
+            <param name="value">The value to be returned as a string</param>
+            <param name="nullValue">The value to be returned if the value is DBNull/null</param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.DataTools.GetInteger(System.Object,System.Nullable{System.Int32})">
+            <summary>
+            Checks if the value is DBNull/null and returns the integer value or a default value
+            </summary>
+            <param name="value">The value to be returned as an integer</param>
+            <param name="nullValue">The value to be returned if the value is DBNull/null</param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.DataTools.GetLong(System.Object,System.Nullable{System.Int64})">
+            <summary>
+            Checks if the value is DBNull/null and returns the long value or a default value
+            </summary>
+            <param name="value">The value to be returned as a long</param>
+            <param name="nullValue">The value to be returned if the value is DBNull/null</param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.DataTools.GetDouble(System.Object,System.Nullable{System.Double})">
+            <summary>
+            Checks if the value is DBNull/null and returns the double value or a default value
+            </summary>
+            <param name="value">The value to be returned as a double</param>
+            <param name="nullValue">The value to be returned if the value is DBNull/null</param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.DataTools.GetDecimal(System.Object,System.Nullable{System.Decimal})">
+            <summary>
+            Checks if the value is DBNull/null and returns the decimal value or a default value
+            </summary>
+            <param name="value">The value to be returned as a decimal</param>
+            <param name="nullValue">The value to be returned if the value is DBNull/null</param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.DataTools.GetDateTime(System.Object,System.Nullable{System.DateTime},System.String,System.IFormatProvider)">
+            <summary>
+            Checks if the value is DBNull/null and returns the DateTime value or a default value
+            </summary>
+            <param name="value">The value to be returned as a DateTime</param>
+            <param name="nullValue">The value to be returned if the value is DBNull/null</param>
+            <param name="dateFormat">The format to use when aprsing the date, null results in default DateTime.Parse behavior</param>
+            <param name="formatProvider">The format provider to be used in conjunction with dateFormat. Defaults to CultureInfo.InvariantCulture</param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.DataTools.GetDateTimeOffset(System.Object,System.Nullable{System.DateTimeOffset},System.String,System.IFormatProvider)">
+            <summary>
+            Checks if the value is DBNull/null and returns the DateTimeOffset value or a default value
+            </summary>
+            <param name="value">The value to be returned as a DateTimeOffset</param>
+            <param name="nullValue">The value to be returned if the value is DBNull/null</param>
+            <param name="dateFormat">The format to use when aprsing the date, null results in default DateTimeOffset.Parse behavior</param>
+            <param name="formatProvider">The format provider to be used in conjunction with dateFormat. Defaults to CultureInfo.InvariantCulture</param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.DataTools.GetBoolean(System.Object,System.Nullable{System.Boolean})">
+            <summary>
+            Checks if the value is DBNull/null, and if so returns a false. 
+            If the value resolves to 1, then it returns "true".
+            If the value resolves to 0, then it returns "false".
+            Otherwise it parses the string version of the value as a boolean and returns the result.
+            </summary>
+            <param name="value">The value to be evaluated as a boolean</param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.DateTimeExtensions.ValidateArgument(System.DateTime,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.String)">
+            <summary>
+            Performs validations on a value, throwing the appropriate argument exception if the value does nto meet the requirement(s).
+            Also throws an exception if minValue is greater than maxValue.
+            </summary>
+            <param name="value"></param>
+            <param name="name"></param>
+            <param name="minValue"></param>
+            <param name="maxValue"></param>
+        </member>
+        <member name="M:Horizon.DateTimeExtensions.ToEndOfDay(System.DateTime)">
+            <summary>
+            Returns a new DateTime set to 11:59 PM of the date represented by the input.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.DateTimeOffsetExtensions.ValidateArgument(System.DateTimeOffset,System.String,System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset},System.String)">
+            <summary>
+            Performs validations on a value, throwing the appropriate argument exception if the value does nto meet the requirement(s).
+            Also throws an exception if minValue is greater than maxValue.
+            </summary>
+            <param name="value"></param>
+            <param name="name"></param>
+            <param name="minValue"></param>
+            <param name="maxValue"></param>
+        </member>
+        <member name="M:Horizon.DateTimeOffsetTools.ValidateArgument(System.String,System.DateTimeOffset,System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset},System.String)">
+            <summary>
+            Performs validations on a value, throwing the appropriate argument exception if the value does nto meet the requirement(s).
+            Also throws an exception if minValue is greater than maxValue.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <param name="minValue"></param>
+            <param name="maxValue"></param>
+        </member>
+        <member name="M:Horizon.DateTimeOffsetTools.Random(System.Random)">
+            <summary>
+            Returns a random DateTimeOffset between DateTimeOffset.MinValue and DateTimeOffset.MaxValue.
+            </summary>
+            <param name="randomSource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.DateTimeOffsetTools.Random(System.DateTimeOffset,System.DateTimeOffset,System.Random)">
+            <summary>
+            Returns a random DateTimeOffset between the specified values.
+            </summary>
+            <param name="minValue"></param>
+            <param name="maxValue"></param>
+            <param name="randomSource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.DateTimeTools.ValidateArgument(System.String,System.DateTime,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.String)">
+            <summary>
+            Performs validations on a value, throwing the appropriate argument exception if the value does nto meet the requirement(s).
+            Also throws an exception if minValue is greater than maxValue.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <param name="minValue"></param>
+            <param name="maxValue"></param>
+        </member>
+        <member name="M:Horizon.DateTimeTools.Random(System.Random)">
+            <summary>
+            Returns a random DateTime between DateTime.MinValue and DateTime.MaxValue.
+            </summary>
+            <param name="randomSource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.DateTimeTools.Random(System.DateTime,System.DateTime,System.Random)">
+            <summary>
+            Returns a random DateTime between the specified values.
+            </summary>
+            <param name="minValue"></param>
+            <param name="maxValue"></param>
+            <param name="randomSource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.DateTimeTools.TryParse(System.String,System.Nullable{System.DateTime}@)">
+            <summary>
+            Attempst to parse a string as a DateTime?. If not parseable, false is returned and result is set to null.
+            </summary>
+            <param name="s"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.DecimalExtensions.ValidateArgument(System.Decimal,System.String,System.Int64,System.Int64,System.String)">
+            <summary>
+            Performs validations on a value, throwing the appropriate argument exception if the value does nto meet the requirement(s).
+            Also throws an exception if minValue is greater than maxValue.
+            </summary>
+            <param name="value"></param>
+            <param name="name"></param>
+            <param name="minValue"></param>
+            <param name="maxValue"></param>
+        </member>
+        <member name="M:Horizon.DecimalTools.ValidateArgument(System.String,System.Decimal,System.Decimal,System.Decimal,System.String)">
+            <summary>
+            Performs validations on a value, throwing the appropriate argument exception if the value does nto meet the requirement(s).
+            Also throws an exception if minValue is greater than maxValue.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <param name="minValue"></param>
+            <param name="maxValue"></param>
+        </member>
+        <member name="M:Horizon.DecimalTools.Random(System.Random)">
+            <summary>
+            Returns a random Decimal between Decimal.MinValue and Decimal.MaxValue.
+            </summary>
+            <param name="randomSource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.DecimalTools.Random(System.Decimal,System.Decimal,System.Random)">
+            <summary>
+            Returns a random Decimal between the specified values.
+            </summary>
+            <param name="minValue"></param>
+            <param name="maxValue"></param>
+            <param name="randomSource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.DictionaryExtensions.ToQueryString``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})">
+            <summary>
+            Converts a set of keys and values to a properly formatted and escaped HTTP GET query string
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.Enum`1.GetEnumIntValuePairs(System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.Int32,System.String}},System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.Int32,System.String}})">
+            <inheritdoc cref="M:Horizon.EnumTools.GetEnumIntValuePairs(System.Type,System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.Int32,System.String}},System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.Int32,System.String}})" />
+        </member>
+        <member name="M:Horizon.EnumExtensions.GetAttribute``1(System.Enum)">
+            <inheritdoc cref="M:Horizon.EnumTools.GetAttribute``1(System.Enum)" />
+        </member>
+        <member name="M:Horizon.EnumExtensions.GetDisplayName(System.Enum)">
+            <inheritdoc cref="M:Horizon.EnumTools.GetDisplayName(System.Enum)" />
+        </member>
+        <member name="T:Horizon.Month">
+            <summary>
+            The gregorian calendar months of the year, with numerical values starting at 1
+            </summary>
+        </member>
+        <member name="T:Horizon.MonthFromZero">
+            <summary>
+            The gregorian calendar months of the year, with numerical values starting at 0
+            </summary>
+        </member>
+        <member name="M:Horizon.EnumTools.GetEnumIntValuePairs(System.Type,System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.Int32,System.String}},System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.Int32,System.String}})">
+            <summary>
+            Converts all the values of an enum to KeyValuePairs representing the integer value and string representation of the enum value.
+            </summary>
+            <param name="enumType">The enum to convert.</param>
+            <param name="underscoreToSpace">If set to true, any underscores in the value name will be converted to a space. Defaults to true.</param>
+            <param name="useAttributes">If set to true, the values from some will be used as the "key". Uses <see cref="M:Horizon.EnumTools.GetDisplayName(System.Enum)"/>, see that for details. Defaults to false.</param>
+            <param name="prependAllValuePair">If set to true, an additional KeyValuePair of -1 and "All" will be appended to the end of the list. This prepends before any values prepended via prependValuePairs.</param>
+            <param name="appendValuePairs">A list of additional KeyValuePairs to append to the output. This appends after the value inserted by appendAllValuePair.</param>
+            <param name="prependValuePairs">A list of additional KeyValuePairs to prepend to the output.</param>
+            <returns>The resulting combined values.</returns>
+        </member>
+        <member name="M:Horizon.EnumTools.GetAttribute``1(System.Enum)">
+            <summary>
+            Gets the attribute attached to an enum value
+            </summary>
+            <typeparam name="TAttribute"></typeparam>
+            <param name="enumValue"></param>
+            <returns>The attribute if found, null if not</returns>
+        </member>
+        <member name="M:Horizon.EnumTools.GetDisplayName(System.Enum)">
+            <summary>
+            Returns the Name property of the <see cref="T:System.ComponentModel.DataAnnotations.DisplayAttribute"/> associated with the specified enum value, if available.
+            If not available, the description property of the <see cref="T:System.ComponentModel.DescriptionAttribute"/> associated with the specified enum value, if available.
+            It not available, the name of the enum will be returned, without the name of the enum type.
+            </summary>
+            <param name="enumValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.ExceptionExtensions.Format(System.Exception,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Formats the exception, optionally recursively and/or including stack traces.
+            </summary>
+            <param name="e"></param>
+            <param name="includeStackTrace">If true, includes the statck trace in the output.</param>
+            <param name="includeTypeName">If true, includes the name of the Exception type(s), otherwise just the name of the Exception class is used.</param>
+            <param name="includeFullTypeName">If true, includes the fully qualified name of the Exception type(s), otherwise just the name of the Exception class is used.</param>
+            <param name="recursive">If true, all inner exception information will be appended to the output.</param>
+            <returns>A trimmed string containing the type and message of the exception, and optionally the stack traces and corresponding information from inner exceptions.</returns>
+        </member>
+        <member name="M:Horizon.ExceptionTools.Format(System.Exception,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Formats the exception, optionally recursively and/or including stack traces.
+            </summary>
+            <param name="e"></param>
+            <param name="includeStackTrace">If true, includes the statck trace in the output.</param>
+            <param name="includeTypeName">If true, includes the name of the Exception type(s), otherwise just the name of the Exception class is used.</param>
+            <param name="includeFullTypeName">If true, includes the fully qualified name of the Exception type(s), otherwise just the name of the Exception class is used.</param>
+            <param name="recursive">If true, all inner exception information will be appended to the output.</param>
+            <returns>A trimmed string containing the type and message of the exception, and optionally the stack traces and corresponding information from inner exceptions.</returns>
+        </member>
+        <member name="F:Horizon.FileTypeTools.Map">
+            <summary>
+            A map of mime types and extensions. 
+            For instances where multiple mime types exist for the same file, the standard mime type should be first.
+            For instances wwhere multiple file extensions exist for the same file, the staandard or most common should be first.
+            </summary>
+        </member>
+        <member name="M:Horizon.FileTypeTools.DetermineExtension(System.String)">
+            <summary>
+            Looks up the file extension associated with the specified mime, if known.
+            </summary>
+            <param name="mime"></param>
+            <returns>The lowercase file extension associated with the specified mime type.</returns>
+            <exception cref="T:System.NotSupportedException">Throws if the mime type is not recognized.</exception>
+        </member>
+        <member name="M:Horizon.FileTypeTools.GetStandardMIME(System.String)">
+            <summary>
+            Looks up the standard mime type for the provided mime type.
+            </summary>
+            <param name="mime">The mime to look up.</param>
+            <returns>The lowercase mime type that is the standard type.</returns>
+            <exception cref="T:System.NotSupportedException">Throws if the extension is not recognized.</exception>
+        </member>
+        <member name="M:Horizon.FileTypeTools.DetermineMIME(System.String)">
+            <summary>
+            Looks up the mime type associated with an extension.
+            </summary>
+            <param name="extension">The extension to look up. Can contain starting period.</param>
+            <returns>The lowercase mime type assocated with the specified extension.</returns>
+            <exception cref="T:System.NotSupportedException">Throws if the extension is not recognized.</exception>
+        </member>
+        <member name="M:Horizon.FlagTools.IsSet``1(``0,``0)">
+            <summary>
+            Checks if a particular flag is set on a binary flag set
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="flags"></param>
+            <param name="flag"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.FlagTools.Set``1(``0@,``0)">
+            <summary>
+            Sets a binary flag
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="flags"></param>
+            <param name="flag"></param>
+        </member>
+        <member name="M:Horizon.FlagTools.Unset``1(``0@,``0)">
+            <summary>
+            Unsets a binary flag
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="flags"></param>
+            <param name="flag"></param>
+        </member>
+        <member name="M:Horizon.HashTools.GenerateMD5Hash(System.String)">
+            <summary>
+            Generates an MD5 hash for the provided string and returns it as a hex string.
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.HashTools.GenerateMD5HashForFile(System.String)">
+            <summary>
+            Generates an MD5 hash for the specified file and returns it as a hex string.
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.HttpResponseMessageExtensions.EnsureSuccessStatusCodeWithBody(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            
+            </summary>
+            <param name="response"></param>
+        </member>
+        <member name="M:Horizon.IEnumerableExtensions.Randomize``1(System.Collections.Generic.IEnumerable{``0},System.Nullable{System.Int32})">
+            <summary>
+            Generates a new IEnumerable with the elements randomized.
+            </summary>
+            <param name="source"></param>
+            <param name="seed"> The seed to use when randomizing the elements</param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.IEnumerableExtensions.Any(System.Collections.IEnumerable)">
+            <summary>
+            Returns a boolean that indicates whether the source contains any items.
+            Note that this creates an enumerator and consumes an item from it, so if your implementation
+            depends on that do not use this method. 
+            If the generated enumerator implemented IDisposable, it will be disposed of after the check.
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Horizon.IEnumerableExtensions.IsEmpty(System.Collections.IEnumerable)">
+            <summary>
+            Returns a boolean that indicates whether the source does not contain any items.
+            Note that this creates an enumerator and consumes an item from it, so if your implementation
+            depends on that do not use this method. 
+            If the generated enumerator implemented IDisposable, it will be disposed of after the check.        
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.IntegerTools.ValidateArgument(System.String,System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            Performs validations on a value, throwing the appropriate argument exception if the value does nto meet the requirement(s).
+            Also throws an exception if minValue is greater than maxValue.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <param name="minValue"></param>
+            <param name="maxValue"></param>
+        </member>
+        <member name="M:Horizon.IntegerTools.Random(System.Random)">
+            <summary>
+            Returns a random Integer (Int32) between Int32.MinValue and Int32.MaxValue.
+            </summary>
+            <param name="randomSource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.IntegerTools.Random(System.Int32,System.Int32,System.Random)">
+            <summary>
+            Returns a random Integer (Int32) between the specified values.
+            </summary>
+            <param name="minValue"></param>
+            <param name="maxValue"></param>
+            <param name="randomSource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.LongExtensions.ValidateArgument(System.Int64,System.String,System.Int64,System.Int64,System.String)">
+            <summary>
+            Performs validations on a value, throwing the appropriate argument exception if the value does nto meet the requirement(s).
+            Also throws an exception if minValue is greater than maxValue.
+            </summary>
+            <param name="value"></param>
+            <param name="name"></param>
+            <param name="minValue"></param>
+            <param name="maxValue"></param>
+        </member>
+        <member name="M:Horizon.LongTools.ValidateArgument(System.String,System.Int64,System.Int64,System.Int64,System.String)">
+            <summary>
+            Performs validations on a value, throwing the appropriate argument exception if the value does nto meet the requirement(s).
+            Also throws an exception if minValue is greater than maxValue.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <param name="minValue"></param>
+            <param name="maxValue"></param>
+        </member>
+        <member name="M:Horizon.LongTools.Random(System.Random)">
+            <summary>
+            Returns a long (Int64) between Int64.MinValue and Int64.MaxValue.
+            </summary>
+            <param name="randomSource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.LongTools.Random(System.Int64,System.Int64,System.Random)">
+            <summary>
+            Returns a long (Int64) between the specified values.
+            </summary>
+            <param name="minValue"></param>
+            <param name="maxValue"></param>
+            <param name="randomSource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.NameValueCollectionExtensions.ToQueryString(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Converts a NameValueCollection to a properly formatted and escaped HTTP GET query string
+            </summary>
+            <param name="nvc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.ObjectExtensions.DuplicateObject``1(``0)">
+            <summary>
+            Creates a new object that is a copy of the current object. 
+            Only copies publicly writable properties.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.ObjectExtensions.CopyProperties``2(``0,``1)">
+            <summary>
+            Copyies publicly writable properties from the source to the target.
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="target"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.ObjectTools.DuplicateObject``1(``0)">
+            <summary>
+            Creates a duplicate of the specified object. 
+            Only copies publicly writable properties.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.ObjectTools.CopyProperties``2(``0,``1)">
+            <summary>
+            Copies publicly writable properties from the source to the target. 
+            Uses the properties specified for the generic parameters. 
+            If you don't specify the types, the types of the objects will determine what properties are copied.
+            If you do specify the types, then the S type will provide the properties to be copied, and the T type will specify the properties that can be copied to.
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="target"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.StreamExtensions.ToByteArray(System.IO.Stream)">
+            <summary>
+            Converts the stream to a byte array.
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.StreamTools.ToByteArray(System.IO.Stream)">
+            <summary>
+            Converts a stream to a byte array.
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Horizon.StringConstants.HORIZON_MANAGED_SERVICES">
+            <summary>
+            The name of the company, properly spelled.
+            </summary>
+        </member>
+        <member name="F:Horizon.StringConstants.CRLF">
+            <summary>
+            Equivalent of vbCrLf
+            </summary>
+        </member>
+        <member name="F:Horizon.StringConstants.LF">
+            <summary>
+            Equivalent of vbLf
+            </summary>
+        </member>
+        <member name="F:Horizon.StringConstants.CR">
+            <summary>
+            Equivalent of vbCr
+            </summary>
+        </member>
+        <member name="M:Horizon.StringExtensions.Left(System.String,System.Int32)">
+            <summary>
+            Returns a substring with the specified number of characters starting from the beginning of the string.
+            If the source string is null, then a a null is returned.
+            If the source string is not long enough to satisfy the requested number of characters, then the original string is returned.
+            </summary>
+            <param name="thisString"></param>
+            <param name="characters"></param>
+            <returns>The resulting string</returns>
+        </member>
+        <member name="M:Horizon.StringExtensions.Right(System.String,System.Int32)">
+            <summary>
+            Returns a substring with the specified number of characters starting from the end of the string.
+            If the source string is null, then a null is returned.
+            If the source string is not long enough to satisfy the requested number of characters, then the original string is returned.
+            </summary>
+            <param name="thisString"></param>
+            <param name="characters"></param>
+            <returns>The resulting string</returns>
+        </member>
+        <member name="M:Horizon.StringExtensions.IsNullOrWhitespace(System.String)">
+            <summary>
+            Returns false if the string is null, empty, or only whitespace characters. Otherwise returns true.
+            Is null safe.
+            </summary>
+            <param name="thisString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.StringExtensions.IfNullOrWhitespace(System.String,System.String)">
+            <summary>
+            Returns the calling string as long as the calling string is not null or all whitespace, otherwise returns the fallback string.
+            </summary>
+            <param name="thisString"></param>
+            <param name="fallback"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.StringExtensions.ValidateArgument(System.String,System.String,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            Performs various validations on a value, throwing the appropriate exception if the value does not meet the requirement
+            </summary>
+            <param name="value"></param>
+            <param name="name"></param>
+            <param name="notNull">If value is null, throws ArgumentNullException</param>
+            <param name="notEmptyOrWhiteSpace">If value is empty or whitespace, throws ArgumentNullException</param>
+        </member>
+        <member name="M:Horizon.StringTools.Left(System.String,System.Int32)">
+            <summary>
+            Returns a substring with the specified number of characters starting from the beginning of the string.
+            If the source string is null, then a a null is returned.
+            If the source string is not long enough to satisfy the requested number of characters, then the original string is returned.
+            </summary>
+            <param name="input"></param>
+            <param name="characters"></param>
+            <returns>The resulting string</returns>
+        </member>
+        <member name="M:Horizon.StringTools.Right(System.String,System.Int32)">
+            <summary>
+            Returns a substring with the specified number of characters starting from the end of the string.
+            If the source string is null, then a null is returned.
+            If the source string is not long enough to satisfy the requested number of characters, then the original string is returned.
+            </summary>
+            <param name="input"></param>
+            <param name="characters"></param>
+            <returns>The resulting string</returns>
+        </member>
+        <member name="M:Horizon.StringTools.Trim(System.String)">
+            <summary>
+            Trims the specified string
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.StringTools.IsNullOrWhiteSpace(System.String)">
+            <summary>
+            Provides IsNullOrWhitespace for older .NETs in a forward-compatible manner
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.StringTools.ParseIfPossible``1(System.String)">
+            <summary>
+            Attempts to parse an input string to a type, and returns that value if succesful, or a null if not.
+            Requires that the specified type have a TryParse function.
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.StringTools.CombineURI(System.String,System.String)">
+            <summary>
+            Combines URI segments together, automatically inserting forward slashes when needed.
+            Does NOT expand relative paths, or understand query string.
+            </summary>
+            <param name="path1"></param>
+            <param name="path2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.StringTools.CombineURI(System.String[])">
+            <summary>
+            Combines URI segments together, automatically inserting forward slashes when needed.
+            Does NOT expand relative paths, or understand query string.
+            </summary>
+            <param name="paths">The paths to join</param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.StringTools.ValidateArgument(System.String,System.String,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            Performs various validations on a value, throwing the appropriate exception if the value does not meet the requirement
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <param name="notNull">If value is null, throws ArgumentNullException</param>
+            <param name="notEmptyOrWhiteSpace">If value is empty or whitespace, throws ArgumentNullException</param>
+        </member>
+        <member name="M:Horizon.StringTools.SanitizeForFileName(System.String,System.String)">
+            <summary>
+            Replaces and characters that are not allowed in a file name with the specified substitute value.
+            Substitute value defaults to an empty string, effectively just removing the characters.
+            </summary>
+            <param name="input"></param>
+            <param name="substituteCharacter"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Horizon.StringTools.CharTypes">
+            <summary>
+            Allows specifying different types of characters to use as flags
+            </summary>
+        </member>
+        <member name="F:Horizon.StringTools.CharTypes.Letters">
+            <summary>
+            abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+            </summary>
+        </member>
+        <member name="F:Horizon.StringTools.CharTypes.Numbers">
+            <summary>
+            0123456789
+            </summary>
+        </member>
+        <member name="F:Horizon.StringTools.CharTypes.Special">
+            <summary>
+            ~!@#$%^&amp;*()_+-=[]\\;',./&lt;&gt;?:""{}|
+            </summary>
+        </member>
+        <member name="F:Horizon.StringTools.CharTypes.Whitespace">
+            <summary>
+            space and \r\n\t
+            </summary>
+        </member>
+        <member name="M:Horizon.StringTools.Random(System.Int32,Horizon.StringTools.CharTypes,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Random)">
+            <summary>
+            Returns a random string using the specified length and characters
+            </summary>
+            <param name="length">The length of the desired string</param>
+            <param name="types">What types of characters to use for the desired string</param>
+            <param name="excludeCharacters">Characters to exclude</param>
+            <param name="excludeString">A specific string to not return. A returned string could still contain the excluded string, but it cannot be exactly the excluded string.</param>
+            <param name="excludeStrings">Specific strings to not return. A returned string could still contain the an string, but it cannot be exactly an string.</param>
+            <param name="randomSource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.StringTools.RandomUTF8(System.Int32,System.Random)">
+            <summary>
+            Returns a random string using the full URF8 binary space. Should only return calive UTF8 characters, but some UTF8 characters have been known to cause errors in some string functions. Use with caution.
+            </summary>
+            <param name="length">The string length desired.</param>
+            <param name="randomSource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.StringTools.GetExcelColumnNameForIndex(System.Int32)">
+            <summary>
+            Returns the Excel-compatible column name equivalent to the 0-index number specified
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.TimeSpanExtensions.ValidateArgument(System.TimeSpan,System.String,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan},System.String)">
+            <summary>
+            Performs validations on a value, throwing the appropriate argument exception if the value does nto meet the requirement(s).
+            Also throws an exception if minValue is greater than maxValue.
+            </summary>
+            <param name="value"></param>
+            <param name="name"></param>
+            <param name="minValue"></param>
+            <param name="maxValue"></param>
+        </member>
+        <member name="M:Horizon.TimeSpanTools.ValidateArgument(System.String,System.TimeSpan,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan},System.String)">
+            <summary>
+            Performs validations on a value, throwing the appropriate argument exception if the value does nto meet the requirement(s).
+            Also throws an exception if minValue is greater than maxValue.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <param name="minValue"></param>
+            <param name="maxValue"></param>
+        </member>
+        <member name="M:Horizon.TimeSpanTools.Random(System.Random)">
+            <summary>
+            Returns a random TimeSpan between TimeSpan.MinValue and TimeSpan.MaxValue.
+            </summary>
+            <param name="randomSource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.TimeSpanTools.Random(System.TimeSpan,System.TimeSpan,System.Random)">
+            <summary>
+            Returns a random TimeSpan between the specified values.
+            </summary>
+            <param name="minValue"></param>
+            <param name="maxValue"></param>
+            <param name="randomSource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Horizon.UriTools.GetFileNameFromUri(System.String)">
+            <summary>
+            Parses the specified URI and attempts to extract the file name portion.
+            </summary>
+            <param name="uri">The URI to use.</param>
+            <returns>The file name portion of the URI.</returns>
+        </member>
+        <member name="M:Horizon.UriTools.IsAbsoluteUri(System.String)">
+            <summary>
+            Determines whether a specified uri is absolute. This requires the presence of a protocol specifier (ie https://) or starting with //.
+            </summary>
+            <param name="uri"></param>
+            <returns>true or false if the uri is or isn't absolute, respectively</returns>
+        </member>
+        <member name="M:Horizon.UriTools.DetermineAbsoluteUri(System.String,System.String)">
+            <summary>
+            Checks if the path is already an absolute URI, and if not combines it with root to create an absolute URI.
+            </summary>
+            <param name="root"></param>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
